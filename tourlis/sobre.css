@@ -1,0 +1,32 @@
+body {
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.img-fluid-img-thumbnail {
+    width: 30%;
+}
+
+.img {
+    display: flex;
+    justify-content: center;
+}
+
+.container-titulo-sobre-projeto {
+   display: flex;
+   justify-content: center;
+}
+
+.container-texto-sobre {
+    /* width: 1000px; */
+    display: flex;
+    justify-content: center;
+
+}
+
+
+.container .row .col img {
+    width: 200px;
+    height: 200px;
+}
