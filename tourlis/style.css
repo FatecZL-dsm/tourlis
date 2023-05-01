@@ -1,0 +1,39 @@
+.d-flex.overflow-auto::-webkit-scrollbar {
+    display: none;
+}
+
+.group {
+    display: flex;
+    justify-content: center;
+}
+
+.odss-container {
+    display: flex;
+    flex-direction: column;
+    margin-right: 5px;
+}
+
+.ods {
+    width: 400px;
+    height: 50px;
+    background-color: #c4b2b2;
+}
+
+.aside-content-display {
+    width: 400px;
+    width: 600px;
+    background-color: #c4b2b2;
+    margin-left: 5px;
+}
+
+.bottom-section {
+    bottom: 0;
+    width: 100%;
+    height: 60px;   /* Height of the footer */
+    background: #6cf;
+}
+
+.container-fluid {
+    display: flex;
+    justify-content: center;
+}
