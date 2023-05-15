@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tourlis - Turismo Litorâneo Sustentável</title>
+  <!-- CSS stylesheets -->
+  <link rel="reset" href="/CSS/reset.css">
+  <link rel="stylesheet" href="/CSS/style.css">
+  <!-- Add Chart.js library here -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+  <header>
+    <nav>
+      <div class="logo">
+        <img src="/IMG/logo.jpg" alt="Tourlis Logo">
+      </div>
+      <ul class="navigation">
+        <li><a href="/HTML/index.html">Home</a></li>
+        <li><a href="/HTML/forum.html">Forum</a></li>
+        <li><a href="/HTML/blog.html">Blog</a></li>
+        <li><a href="/HTML/about.html">Sobre</a></li>
+        <li><a href="#">Login</a></li>
+        <li>
+          <div class="profile-image">
+            <img src="/IMG/profile-image.avif" alt="Profile Image">
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="blog-section">
+      <h2>Postagens da Tourlis</h2>
+      <div class="container">
+        <div class="blog">
+          <div class="blog-post">
+            <img src="/IMG/post1.jpg" alt="Blog Post Image">
+            <h3>Ecoturismo em Balneário Camburiú</h3>
+            <p>Sed elementum quam sit amet luctus cursus. Sed porta fringilla mi ut volutpat. Suspendisse aliquet sit amet neque quis sodales. Pellentesque luctus, neque non maximus laoreet, felis elit iaculis arcu, consectetur pharetra urna fe...</p>
+            <a href="#" class="read-more">Continue Lendo</a>
+          </div>
+          <div class="blog-post">
+              <img src="/IMG/post2.jpeg" alt="Blog Post Image">
+              <h3>5 destinos de ecoturismo no Nordeste do Brasil</h3>
+              <p>Curabitur id nulla at erat pretium semper eget et dui. Vestibulum pharetra orci erat, et volutpat massa pellentesque vitae. Integer eget erat pharetra massa malesuada consequat eget vel nibh. Nullam quis justo eu velit feugiat co...</p>
+              <a href="#" class="read-more">Continue Lendo</a>
+            </div>
+        <!-- Adicionar posts novos abaixo -->
+        </div>
+      </div>
+    </section>
+
+    <section class="infographics-section">
+        <h2>Dados do Turismo</h2>
+        <div class="infographics-list">
+          <div class="infographic-card">
+            <canvas id="infographic-chart"></canvas>
+            <h3>Gráfico Exemplo</h3>
+            <p>Nullam quis justo eu velit feugiat commodo. Aliquam erat volutpat. </p>
+            <a href="#" class="read-more">Visualizar</a>
+          </div>
+          <!-- Adicionar Gráficos abaixo -->
+        </div>
+      </section>
+    </main>
+  
+    <footer>
+      <div class="footer-section">
+          <h3>Contato</h3>
+          <ul>
+              <li><a href="#">Email</a></li>
+              <li><a href="#">Whatsapp</a></li>
+          </ul>
+      </div>
+      <div class="footer-section">
+          <h3>Redes Sociais</h3>
+          <ul>
+              <li><a href="#">Linkedin</a></li>
+              <li><a href="#">Instagram</a></li>
+          </ul>
+      </div>
+      <div class="footer-section">
+          <h3>Assine Nossa Newsletter</h3>
+          <form>
+            <input type="email" placeholder="Digite seu email">
+              <button type="submit">Assinar!</button>
+          </form>
+      </div>
+  </footer>
+  
+    <!-- JavaScript -->
+    <script>
+      // JavaScript code to create interactive chart
+      const ctx = document.getElementById('infographic-chart').getContext('2d');
+      new Chart(ctx, {
+        type: 'bar', // Replace with the desired chart type
+        data: {
+          labels: ['Label 1', 'Label 2', 'Label 3'], // Replace with your data labels
+          datasets: [{
+            label: 'Data',
+            data: [10, 20, 30], // Replace with your data values
+            backgroundColor: ['#3d8bff', '#ff9933', '#66cc33'], // Replace with desired colors
+          }]
+        },
+        options: {
+          // Customize the chart options as needed
+        }
+      });
+    </script>
+</body>
+</html>
