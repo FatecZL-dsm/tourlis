@@ -7,8 +7,11 @@
   <!-- CSS stylesheets -->
   <link rel="reset" href="/CSS/reset.css">
   <link rel="general stylesheet" href="/CSS/style.css">
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
+
 <body>
   <header>
     <nav>
@@ -20,40 +23,65 @@
         <li><a href="/HTML/forum.html">Forum</a></li>
         <li><a href="/HTML/blog.html">Blog</a></li>
         <li><a href="/HTML/about.html">Sobre</a></li>
-        <li><a href="#">Login</a></li>
-        <li>
-          <div class="profile-image">
-            <img src="/IMG/profile-image.avif" alt="Profile Image">
-          </div>
-        </li>
+      </ul>
+      <ul class="login">
+        <button id="loginButton">Login</button>
+            <div class="profile-image">
+              <img src="/IMG/profile-image.avif" alt="Profile Image">
+            </div>
+          </li>
       </ul>
     </nav>
   </header>
 
-  <!-- Conteúdos das páginas vai aqui em Main, basta trocar de acordo com a página criada -->
   <main>
+    
+    <div id="loginModal" class="lmodal">
+      <div class="lmodal-content">
+        <span class="lclose">&times;</span>
+        <h2>Login</h2>
+  
+        <form>
+          <label for="username">Usuário</label>
+          <input type="text" id="username" name="username" placeholder="Insira seu usuário" required>
+    
+          <label for="password">Senha</label>
+          <input type="password" id="password" name="password" placeholder="Insira sua senha" required>
+    
+          <input type="submit" value="Login">
+        </form>
+      </div>
+    </div>
+  
+ <!-- Conteúdos das páginas vai aqui em Main, basta trocar de acordo com a página criada -->
+
     <section class="hero-section">
       <h1>Tourlis</h1>
       <p>Sua plataforma informativa sobre Turismo Sustentável no litoral Brasileiro!</p>
       <!-- Conteúdos adicionais para a Hero section inserir abaixo -->
-
     </section>
 
     <section class="featured-posts-section">
       <h2>Publicações Recentes</h2>
       <div class="post-container">
-        <div class="post-card">
-          <img src="/IMG/post1.jpg" alt="Post 1">
-          <h3>Ecoturismo em Balneário Camburiú</h3>
-          <p>Sed elementum quam sit amet luctus cursus. Sed porta fringilla mi ut volutpat.</p>
+        <div class="content-reel"> 
+          <div class="post-card">
+            <img src="/IMG/post1.jpg" alt="Post 1">
+            <h3>Ecoturismo em Balneário Camburiú</h3>
+            <p>Sed elementum quam sit amet luctus cursus. Sed porta fringilla mi ut volutpat.</p>
+          </div>
+          <div class="post-card">
+            <img src="/IMG/post2.jpeg" alt="Post 2">
+            <h3>5 destinos de ecoturismo no Nordeste do Brasil</h3>
+            <p>Curabitur id nulla at erat pretium semper eget et dui.</p>
+          </div>
+          <div class="post-card">
+            <img src="/IMG/post2.jpeg" alt="Post 2">
+            <h3>5 destinos de ecoturismo no Nordeste do Brasil</h3>
+            <p>Curabitur id nulla at erat pretium semper eget et dui.</p>
+          </div>
+          <!-- Inserir Cards de Post adicionais abaixo -->
         </div>
-        <div class="post-card">
-          <img src="/IMG/post2.jpeg" alt="Post 2">
-          <h3>5 destinos de ecoturismo no Nordeste do Brasil</h3>
-          <p>Curabitur id nulla at erat pretium semper eget et dui.</p>
-        </div>
-        <!-- Inserir Cards de Post adicionais abaixo -->
-
       </div>
     </section>
 
@@ -121,6 +149,8 @@
         </form>
     </div>
   </footer>
+
+  <script src="/JS/script.js"></script>
 
 </body>
 </html>

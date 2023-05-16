@@ -6,9 +6,12 @@
   <title>Tourlis - Fórum</title>
   <!-- CSS stylesheets -->
   <link rel="reset" href="/CSS/reset.css">
-  <link rel="stylesheet" href="/CSS/style.css">
-
+  <link rel="general stylesheet" href="/CSS/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
+
 <body>
   <header>
     <nav>
@@ -20,18 +23,38 @@
         <li><a href="/HTML/forum.html">Forum</a></li>
         <li><a href="/HTML/blog.html">Blog</a></li>
         <li><a href="/HTML/about.html">Sobre</a></li>
-        <li><a href="#">Login</a></li>
-        <li>
-          <div class="profile-image">
-            <img src="/IMG/profile-image.avif" alt="Profile Image">
-          </div>
-        </li>
+      </ul>
+      <ul class="login">
+        <button id="loginButton">Login</button>
+            <div class="profile-image">
+              <img src="/IMG/profile-image.avif" alt="Profile Image">
+            </div>
+          </li>
       </ul>
     </nav>
   </header>
 
-  <!-- Conteúdos das páginas vai aqui em Main, basta trocar de acordo com a página criada -->
   <main>
+    
+    <div id="loginModal" class="lmodal">
+      <div class="lmodal-content">
+        <span class="lclose">&times;</span>
+        <h2>Login</h2>
+  
+        <form>
+          <label for="username">Usuário</label>
+          <input type="text" id="username" name="username" placeholder="Insira seu usuário" required>
+    
+          <label for="password">Senha</label>
+          <input type="password" id="password" name="password" placeholder="Insira sua senha" required>
+    
+          <input type="submit" value="Login">
+        </form>
+      </div>
+    </div>
+  
+ <!-- Conteúdos das páginas vai aqui em Main, basta trocar de acordo com a página criada -->
+
     <section class="forum-section">
       <h2>Fórum</h2>
       <div class="forum-controls">
@@ -50,8 +73,36 @@
             <option value="recent">Recentes</option>
           </select>
         </div>
-        <button class="submit-btn">Criar Postagem</button>
+        <button id="openFormButton" class="submit-btn">Criar Postagem</button>
       </div>
+
+      <div id="formModal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2>Submit a Form</h2>
+    
+          <form>
+            <label for="form-type">Selecione o tipo de postagem quer fazer:</label>
+            <select id="form-type" name="form-type">
+              <option value="report">Reportar Crime Ambiental</option>
+              <option value="feedback">Feedback</option>
+              <option value="contact">Sugestões</option>
+            </select>
+      
+            <label for="name">Seu Nome:</label>
+            <input type="text" id="name" name="name" required>
+      
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+      
+            <label for="message">Mensagem:</label>
+            <textarea id="message" name="message" required></textarea>
+      
+            <input type="submit" value="Enviar">
+          </form>
+        </div>
+      </div>
+
       <div class="threads-container">
         <div class="thread-card">
           <h3>Foi o que ela disse</h3>
@@ -99,6 +150,8 @@
         </form>
     </div>
   </footer>
+
+  <script src="/JS/script.js"></script>
 
 </body>
 </html>

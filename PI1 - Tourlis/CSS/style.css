@@ -2,7 +2,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
   background-color: #f8f8f8;
   color: #333;
 }
@@ -10,7 +10,7 @@ body {
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 40px;
 }
 
 h1, h2, h3 {
@@ -19,20 +19,28 @@ h1, h2, h3 {
 
 /* Navigation bar styles */
 nav {
+  overflow: hidden;
   position: fixed;
   top: 0;
-  left: 0;
   width: 100%;
   background-color: #3d8bff;
-  padding: 10px;
+  padding: 4px 40px 4px 40px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   z-index: 100;
 }
 
+.logo {
+  height: 40px;
+  width: auto;
+  max-height: 100%;
+  max-width: 100%;
+  align-self: auto;
+}
+
 .logo img {
-  height: 30px;
+  height: inherit;
   width: auto;
   max-height: 100%;
   max-width: 100%;
@@ -57,15 +65,155 @@ nav {
   font-weight: bold;
 }
 
-.navigation li.login {
-  margin-right: 0;
-  margin-left: 10px;
+.login {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  margin: 0.1px;
+  padding: 0.1px;
+  justify-content: center;
+}
+
+.login button {
+  background-color: #555;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  padding: 6px 12px;
+  cursor: pointer;
+  display: flex;
+  margin-right: 10px;
+}
+
+.login button:hover {
+  background-color: #333;
+}
+
+.login .profile-image {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: scale-down;
+  object-position: center;
+  margin-right: 10px;
 }
 
 .profile-image img {
-  height: 25px;
-  width: 25px;
-  border-radius: 50%;
+  width: inherit;
+  height: inherit;
+}
+
+.lmodal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.lmodal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border-radius: 5px;
+  max-width: 400px;
+}
+
+.lmodal-content h2 {
+  margin-top: 0;
+  color: #333;
+  text-align: center;
+}
+
+.lmodal-content form {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.lmodal-content label {
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #555;
+}
+
+.lmodal-content input[type="text"],
+.lmodal-content input[type="password"] {
+  padding: 10px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+}
+
+.lmodal-content input[type="submit"] {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #555;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.lmodal-content input[type="submit"]:hover {
+  background-color: #333;
+}
+
+.lclose {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.lclose:hover,
+.lclose:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Custom styles for login modal */
+.lmodal-content h2 {
+  margin-top: 0;
+  color: #333;
+}
+
+.lmodal-content form {
+  margin-top: 20px;
+}
+
+.lmodal-content label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #555;
+}
+
+.lmodal-content input[type="text"],
+.lmodal-content input[type="password"] {
+  width: 100%;
+  padding: 8px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+}
+
+.lmodal-content input[type="submit"] {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #555;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.lmodal-content input[type="submit"]:hover {
+  background-color: #333;
 }
 
 /* Homepage styles */
@@ -134,9 +282,31 @@ nav {
 }
 
 .post-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  grid-gap: 20px;
+  overflow: hidden;
+  display: block;
+}
+
+.content-reel {
+  display: flex;
+  animation: 60s infinite;
+}
+
+@keyframes slide-left {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(-200%);
+  }
+  75% {
+    transform: translateX(-300%);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 
 .post-card {
@@ -145,10 +315,11 @@ nav {
   text-align: center;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-right: 24px;
 }
 
 .post-card img {
-  width: 100%;
+  width: inherit;
   max-height: 200px;
   object-fit: cover;
   border-radius: 5px;
@@ -201,6 +372,81 @@ nav {
   border-radius: 5px;
   font-weight: bold;
   cursor: pointer;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border-radius: 5px;
+  max-width: 500px;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Custom styles for form modal */
+.modal-content h2 {
+  margin-top: 0;
+  color: #333;
+}
+
+.modal-content form {
+  margin-top: 20px;
+}
+
+.modal-content label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #555;
+}
+
+.modal-content input[type="text"],
+.modal-content input[type="email"],
+.modal-content textarea {
+  width: 100%;
+  padding: 8px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+}
+
+.modal-content input[type="submit"] {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #555;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.modal-content input[type="submit"]:hover {
+  background-color: #333;
 }
 
 .threads-container {
@@ -337,10 +583,11 @@ nav {
   font-weight: bold;
 }
 
- /* About page styles */
- .about {
-  margin-top: 80px;
-  padding: 20px;
+/* About page styles */
+
+.about {
+margin-top: 80px;
+padding: 20px;
 }
 
 .about-section h2 {
@@ -354,26 +601,51 @@ nav {
   color: #666;
 }
 
+.founders-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
+}
+
 .founders-section h2 {
-  font-size: 24px;
-  color: #333;
-  margin-bottom: 20px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  padding-top: 2rem;
+}
+
+.founders-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
 }
 
 .founders-card {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  height: 200px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   text-align: center;
+  transition: all 0.3s ease;
+}
+
+.founders-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
 }
 
 .founders-card img {
-  width: 120px;
-  height: 120px;
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
   border-radius: 50%;
   margin-bottom: 10px;
 }
@@ -381,144 +653,154 @@ nav {
 .founders-card h3 {
   font-size: 18px;
   color: #333;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 .founders-card p {
   font-size: 14px;
   color: #666;
+  text-align: center;
+  margin-bottom: 0;
 }
 
-  /* Footer styles */
-  footer {
-    background-color: #f2f2f2;
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-  }
-  
-  .footer-section {
-    flex: 1;
-    margin-right: 20px;
-  }
-  
-  .footer-section h3 {
-    font-size: 16px;
-    color: #333;
-    margin-bottom: 10px;
-  }
-  
-  .footer-section ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .footer-section ul li {
-    margin-bottom: 5px;
-  }
-  
-  .footer-section ul li a {
-    text-decoration: none;
-    color: #666;
-  }
-  
-  .footer-section form {
-    margin-top: 10px;
+/* Footer styles */
+footer {
+  background-color: #f2f2f2;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.footer-section {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.footer-section h3 {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.footer-section ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 5px;
+}
+
+.footer-section ul li a {
+  text-decoration: none;
+  color: #666;
+}
+
+.footer-section form {
+  margin-top: 10px;
+}
+
+.footer-section form input[type="email"] {
+  width: 200px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.footer-section form button {
+  padding: 5px 10px;
+  background-color: #3d8bff;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+/* Responsive styles */
+
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
   }
 
-  .footer-section form input[type="email"] {
-    width: 200px;
+  nav {
     padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
   }
-  
-  .footer-section form button {
-    padding: 5px 10px;
-    background-color: #3d8bff;
-    color: #fff;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
+
+  .logo img {
+    height: 25px;
   }
-  
-  /* Responsive styles */
-  
-  @media (max-width: 768px) {
-    .container {
-      padding: 10px;
-    }
-  
-    nav {
-      padding: 5px;
-    }
-  
-    .logo img {
-      height: 25px;
-    }
-  
-    .nav-links {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-  
-    .nav-links li {
-      margin-bottom: 5px;
-    }
-  
-    .nav-links li.active a {
-      color: #ffd700;
-    }
-  
-    .profile-img img {
-      height: 20px;
-      width: 20px;
-    }
-  
-    .about {
-      margin-top: 60px;
-      padding: 10px;
-    }
-  
-    .about-section h2 {
-      font-size: 20px;
-      margin-bottom: 15px;
-    }
-  
-    .about-section p {
-      font-size: 14px;
-    }
-  
-    .founders-section h2 {
-      font-size: 20px;
-      margin-bottom: 15px;
-    }
-  
-    .founders-card img {
-      width: 90px;
-      height: 90px;
-      margin-bottom: 5px;
-    }
-  
-    .founders-card h3 {
-      font-size: 16px;
-      margin-bottom: 5px;
-    }
-  
-    .founders-card p {
-      font-size: 12px;
-    }
-  
-    footer {
-      padding: 10px;
-      flex-direction: column;
-      align-items: flex-start;
-    }
-  
-    .footer-section {
-      margin-bottom: 20px;
-    }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: flex-start;
   }
-  
+
+  .nav-links li {
+    margin-bottom: 5px;
+  }
+
+  .nav-links li.active a {
+    color: #ffd700;
+  }
+
+  .profile-img img {
+    height: 20px;
+    width: 20px;
+  }
+
+  .about {
+    margin-top: 60px;
+    padding: 10px;
+  }
+
+  .about-section h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+
+  .about-section p {
+    font-size: 14px;
+  }
+
+  .founders-section h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+
+  .founders-card img {
+    width: 90px;
+    height: 90px;
+    margin-bottom: 5px;
+  }
+
+  .founders-card h3 {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+
+  .founders-card p {
+    font-size: 12px;
+  }
+
+  footer {
+    padding: 10px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-section {
+    margin-bottom: 20px;
+  }
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}

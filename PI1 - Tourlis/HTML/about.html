@@ -6,38 +6,65 @@
   <title>Tourlis - Turismo Litorâneo Sustentável</title>
   <!-- CSS stylesheets -->
   <link rel="reset" href="/CSS/reset.css">
-  <link rel="stylesheet" href="/CSS/style.css">
-
+  <link rel="general stylesheet" href="/CSS/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <header>
-        <nav>
-          <div class="logo">
-            <img src="/IMG/logo.jpg" alt="Tourlis Logo">
-          </div>
-          <ul class="navigation">
-            <li><a href="/HTML/index.html">Home</a></li>
-            <li><a href="/HTML/forum.html">Forum</a></li>
-            <li><a href="/HTML/blog.html">Blog</a></li>
-            <li><a href="/HTML/about.html">Sobre</a></li>
-            <li><a href="#">Login</a></li>
-            <li>
-              <div class="profile-image">
-                <img src="/IMG/profile-image.avif" alt="Profile Image">
-              </div>
-            </li>
-          </ul>
-        </nav>
-    </header>
+  <header>
+    <nav>
+      <div class="logo">
+        <img src="/IMG/logo.jpg" alt="Tourlis Logo">
+      </div>
+      <ul class="navigation">
+        <li><a href="/HTML/index.html">Home</a></li>
+        <li><a href="/HTML/forum.html">Forum</a></li>
+        <li><a href="/HTML/blog.html">Blog</a></li>
+        <li><a href="/HTML/about.html">Sobre</a></li>
+      </ul>
+      <ul class="login">
+        <button id="loginButton">Login</button>
+            <div class="profile-image">
+              <img src="/IMG/profile-image.avif" alt="Profile Image">
+            </div>
+          </li>
+      </ul>
+    </nav>
+  </header>
 
-    <main class="about">
+  <main>
+    
+    <div id="loginModal" class="lmodal">
+      <div class="lmodal-content">
+        <span class="lclose">&times;</span>
+        <h2>Login</h2>
+  
+        <form>
+          <label for="username">Usuário</label>
+          <input type="text" id="username" name="username" placeholder="Insira seu usuário" required>
+    
+          <label for="password">Senha</label>
+          <input type="password" id="password" name="password" placeholder="Insira sua senha" required>
+    
+          <input type="submit" value="Login">
+        </form>
+      </div>
+    </div>
+  
+    <!-- Conteúdos das páginas vai aqui em Main, basta trocar de acordo com a página criada -->
+
+      <section class="about">
         <div class="about-section">
             <h2>Sobre a Tourlis</h2>
             <p>A Tourlis é uma plataforma informativa sobre turismo sustentável litorâneo no Brasil que promove a transparência nos indicadores de desenvolvimento sustentável baseados na agenda 2030. Nossa missão é fornecer informações e recursos valiosos para turistas, moradores locais e empresas, a fim de apoiar práticas de turismo sustentável e ajudar a criar um mundo mais consciente ambientalmente.</p>
         </div>
+      
         <div class="founders-section">
-            <h2>Conheça Nosso Time</h2>
+          <h2>Conheça Nosso Time</h2>
+          
+          <div class="founders-container">
             <div class="founders-card">
                 <img src="/IMG/fonder1.webp" alt="Founder 1 Picture">
                 <h3>Michael Scott</h3>
@@ -48,7 +75,19 @@
                 <h3>Dwight K. Schrute</h3>
                 <p>Assistant to the Regional Manager</p>
             </div>
+            <div class="founders-card">
+              <img src="/IMG/founder3.jpg" alt="Founder 2 Picture">
+              <h3>Jim Halpert</h3>
+              <p>Salesman</p>
+            </div>
+            <div class="founders-card">
+              <img src="/IMG/founder4.jpg" alt="Founder 2 Picture">
+              <h3>Pamela Beesly</h3>
+              <p>Receptionist</p>
+            </div>
+          </div>
         </div>
+      </section>
     </main>
 
     <footer>
@@ -74,6 +113,9 @@
           </form>
       </div>
   </footer>
+
+  <script src="/JS/script.js"></script>
+
 
 </body>
 </html>
